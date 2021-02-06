@@ -84,6 +84,14 @@ Words containing double 'o's; 200 lines trimmed down to 4!
 
 ## Handling errors
 
-The program aborts as soon as a non-existent, invalid or inaccessible file is encountered.  You do not need to pre-screen the arguments before you begin processing; just let `open()` raise an exception.
+The program aborts when no search term is provided.
 
-Your program must use `usage()` to raise an error when too few arguments are given; at a minimum the name of one input file is required.
+    $ python src/tt.py grep
+    Error: Please provide a pattern and at least one filename
+
+    tt.py grep [-v] PATTERN FILENAME...
+        Print lines of files matching PATTERN
+        -v  Invert matching; print lines which DO NOT match PATTERN
+
+
+The program aborts as soon as a non-existent, invalid or inaccessible file is encountered.  You do not need to pre-screen the arguments before you begin processing; just let `open()` raise an exception.
