@@ -4,7 +4,7 @@ Because `paste` is used to create input data for the `cut` tool, I'll explain it
 
 
 ## paste
-Paste joins two or more files together, inserting a comma in between
+Paste joins two or more files together, inserting a single comma `,` in between
 
     $ python src/tt.py paste data/let3 data/num2 
     a,1
@@ -55,7 +55,7 @@ When only one file is given `paste` behaves like `cat`
 
 ### Creating the file `data/people.csv`
 
-`paste` is used to create a single Comma Separated Values (CSV) file from multiple input files.
+`paste` is used to create a single Comma Separated Values (CSV) file from multiple input files.  `paste` works by joining lines from multiple files by a single comma `,`.
 
     $ python src/tt.py paste data/names8 data/ages8 data/colors8 data/verbs8
     Name,Age,Favorite Color,Locomotion Style
@@ -77,12 +77,14 @@ The resulting data can be redirected to a new file with the shell's redirection 
 
 Notice that after running this command the prompt immediately returns and nothing else is printed to the screen.  The output was redirected into the new file `data/people.csv` instead of being displayed on the screen.
 
-*If you are stuck on the `paste` tool can't make `data/people.csv`, you can just use the `paste` tool that comes with your shell.*
+*If you get stuck on the `paste` tool and want to proceed to `cut`, you can create the test file `data/people.csv` using the `paste` tool that comes with your shell*
+
+    $ paste -d, data/names8 data/ages8 data/colors8 data/verbs8 > data/people.csv
 
 
 
 ## cut
-`cut`, in contrast to `paste`, extracts fields (or columns) of data from a single CSV file given as an argument.  By default the 1st column is extracted:
+`cut`, in contrast to `paste`, extracts fields (or columns) of data from a single CSV file given as an argument. Lines are split into fields on each comma `,`.  By default the 1st field is printed while the rest are ignored:
 
     $ python src/tt.py cut data/people.csv
     Name 
@@ -200,6 +202,8 @@ Notice the excess of blank lines produced by this command; half of the lines in 
     $ 
 
 
+*If you want to compare your version of `cut` with the "real" one, remember to give it the `-d,` argument so that it cuts on commas instead of Tabs.*
+
 
 ## Handling errors
 
@@ -215,9 +219,23 @@ Your program must use `usage()` to raise an error when too few arguments are giv
         -f  List of comma-separated integers indicating fields to output
 
 
+
 `cut` must report an error when the `-f` switch is not given an argument
 
     $ python src/tt.py cut -f
+    Error: A comma-separated field specification is required
+
+    tt.py cut [-f LIST] FILENAME...
+        Remove comma-separated sections from each line of files
+        -f  List of comma-separated integers indicating fields to output
+
+
+
+The argument to `-f` is a comma-separated list of positive integers.  Ignore
+any numbers that are `<= 0`.  If all arguments to `-f` were invalid, treat that
+as though no arguments were given:
+
+    $ python src/tt.py cut -f 0,-1
     Error: A comma-separated field specification is required
 
     tt.py cut [-f LIST] FILENAME...

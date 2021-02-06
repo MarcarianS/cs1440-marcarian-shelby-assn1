@@ -1,4 +1,4 @@
-**Replace the bold paragraphs with your own content**
+*Replace the bold text with your own content*
 
 *Adapted from https://htdp.org/2020-5-6/Book/part_preface.html*
 
@@ -14,7 +14,7 @@ assignment description.  I stand-in for the client and end-users when you have
 questions concerning their needs and desires.**
 
 **In this phase of the design process you should use [The Feynman
-Technique](https://www.youtube.com/watch?v=tkm0TNFzIeg) to ensure that you
+Technique](https://www.youtube.com/watch?v=tkm0TNFzIeg) To ensure that you
 understand what is being asked of you.**
 
 **The output of this phase of the development process is a restatement of the
@@ -95,10 +95,10 @@ technologies you will spend less and less time in this phase of the process.**
 
 # 5.  Testing
 
-**Articulate the examples given in step #3 as tests and ensure that each
-function passes all.  Doing so discovers mistakes.  Tests also supplement
-examples in that they help others read and understand the definition when the
-need arises—and it will arise for any serious program.**
+**Articulate the examples given in step #2 as tests and ensure that each
+function passes all of its tests.  Doing so discovers mistakes.  Tests also
+supplement examples in that they help others read and understand the definition
+when the need arises—and it will arise for any serious program.**
 
 **As bugs are discovered and fixed, devise new test cases that will detect these
 problems should they return.**

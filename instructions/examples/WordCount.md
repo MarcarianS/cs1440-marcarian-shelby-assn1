@@ -1,17 +1,17 @@
 # Word Count tool (`wc`)
 
-The `wc` tool counts and prints the number of lines, words, and characters (bytes) present in a text file.  Note that, due to differences in the representation of the end-of-line (EOL) sequence between operating systems, the byte count you see on Windows may vary from my examples.  The character and word counts should remain the same.  These examples were produced on Linux.
+The `wc` tool counts and prints the number of lines, words, and characters (bytes) present in a text file.  Note that, due to differences in the representation of the end-of-line (EOL) sequence between operating systems, the byte count you see on Windows may vary from my examples.  The line and word counts should remain the same.  These examples were produced on Linux.
 
 This example reports that the file `data/num2` contains two lines, two words, and four characters
 
     $ python src/tt.py wc data/num2
-    2	2	4	data/num2
+    2   2   4   data/num2
 
 
 This example reports that the file `data/words200` contains 200 lines, 200 words, and 1790 characters
 
     $ python src/tt.py wc data/words200
-    200	200	1790	data/words200
+    200 200 1790   data/words200
 
 
 
@@ -24,6 +24,12 @@ Multiple files may be given at once.  In this case the grand total is reported a
          8       8      16  data/dup5
        231     231    1863  total
 
+
+## Output format
+
+The examples in this file show the numeric columns being right-justified and the filenames left-justified.  This is not a hard requirement.  So long as the columns are presented in the correct order **AND** are distinct from each other, you can align them however you wish.
+
+The columns of output, from left to right, are **lines**, **words**, **characters** and **file names**.
 
 
 ## Handling errors
@@ -41,8 +47,8 @@ Your program must use `usage()` to raise an error when too few arguments are giv
 The program aborts as soon as a non-existent, invalid or inaccessible file is encountered.  You do not need to pre-screen the arguments before you begin processing; just let `open()` raise an exception.
 
     $ python src/tt.py wc data/let3 data/random20 data/DOES_NOT_EXIST data/dup5 
-    3	3	6	data/let3
-    20	20	51	data/random20
+     3   3   6  data/let3
+    20  20  51  data/random20
     Traceback (most recent call last):
       File "src/tt.py", line 74, in <module>
         ops[sys.argv[1]](sys.argv[2:])
