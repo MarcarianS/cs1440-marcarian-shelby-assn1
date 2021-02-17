@@ -210,13 +210,78 @@ def grep(args)
 -close file
 
 **Output:
--
-#sort
+-The last lines of a file, with a header if there are multiple files given.
 
+**Function Stub:
+def tail(args)
+	if args[0] startswith "-"
+		numberOfLines = args[1]
+		remove args[0] and args[1]
+	else numberOfLines = 10
+	for file in args
+		open file
+		fileLength = 0
+		for line in fileObj fileLengh += 1
+		fileLength - numberOfLines = startingLine
+		currentLine = 0
+		for line in fileObj
+			currentLine += 1
+			if current line is >= startingLine, print line
+		close file
+#sort
+**Input:
+-list of files
+
+**Internal Data:
+-open files, put contents into list and close file
+-take list of lines and use list.sort() to sort all files together
+-for i in list, print i
+
+**Output:
+-All contents from all files given, sorted with each other. 
+
+**Function Stub:
+def sort(args)
+	if len.args == 0, call usage(not enough arguments)
+	for file in args, open file
+		for line in file, append line to listToSort
+		close file
+	listToSort.sort()
+	for line in listToSort
+		print line
 #tac
+**Input:
+-list of files
+
+**Internal Data:
+-If no files are given, call usage
+-for file in args, open file
+-append each line into a blank list
+-reverse the file with array.reverse()
+-for line in list, print the line
+-close file
+
+**Output:
+-reversed contents of file, printed line by line.
+
+**Function Stub:
+def tac(args)
+	if args length is 0, call usage
+	for file in args, open file
+		for line in fileObj, append to list
+		list.reverse()
+		for line in list, print line
+		close file
 
 #paste
+**Input:
+-list of files
 
+**Internal Data:
+-If no files given, call usage for too few args
+-for file in args open file
+-append fileObj into list
+-for obj in list, index = 0, 
 #cut
 # 2.  Functional Examples
 

@@ -5,8 +5,13 @@
 * [Hints](instructions/Hints.md)
 * [Rubric](instructions/Rubric.md)
 
-*Note: this file is a placeholder for your own notes.  When seeking help from the TAs or tutors replace the text in this file with a description of your problem and push it to your repository on GitLab*
+##Shelby's Notes and Sources
+Python Cookbook on O'reilly- got my method for counting lines without putting
+them into a list from here (felt silly for not thinking of it myself after I read it)
 
+Python's documentation- verified syntax for the count() function
+learned the "in" operator for grep
+verified syntax for remove()
 ## Overview
 
 A client has sought DuckieCorp's services to process a large quantity of textual data.  Specifically, the data is in the form of a Comma Separated Values (CSV) file which is far too large to load as a spreadsheet in an application such as LibreOffice Calc or Microsoft Excel.
