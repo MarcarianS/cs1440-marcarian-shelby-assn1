@@ -333,6 +333,64 @@ def head()
 		close(fileObj)
 
 
+def tail(args)
+	if args[0] startswith "-n"
+		if args[1].isnumeric()
+	                numberOfLines = int(args[1])
+        	        remove args[0] and args[1]
+			for file in args
+				open file
+				fileLength = 0
+				for line in fileObj
+					fileLength += 1
+				fileLength - numberOfLines = startingLine
+				currentLine = 0
+				for line in fileObj 
+					currentLine += 1
+					if currentLine >= startingLine
+						print(line)
+		else
+			usage(number of lines required)        
+	else numberOfLines = 10
+        for file in args
+                open file
+                fileLength = 0
+                for line in fileObj fileLengh += 1
+                fileLength - numberOfLines = startingLine
+                currentLine = 0
+                for line in fileObj
+                        currentLine += 1
+                        if current line is >= startingLine, print line
+                close file
+
+def sort(args)
+	if len.args == 0
+		usage(not enough arguments)
+	else
+		listToSort = []
+        	for file in args
+			fileObj = open file
+                		for line in fileObj
+					listToSort.append(line)
+                close file
+        listToSort.sort()
+        for line in listToSort
+                print line
+
+def tac(args)
+	if len(args) == 0
+		usage(too feew arguments)
+	else:
+        	listToReverse = []
+		for file in args
+			fileObj = open file
+	                for line in fileObj
+				listToReserve.append(line)
+                listToReverse.reverse()
+                for line in list, print line
+                close file
+
+
 # 3.  Function Template
 
 **Combine the function stubs written in step #1 with pseudocode from step #2.
