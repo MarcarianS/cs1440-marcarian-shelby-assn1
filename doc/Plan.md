@@ -88,17 +88,13 @@ def cat(args)
 
 **Function stub:
 def wc(args)
-	for filename in args
-		if startswith "-" args.remove(filename)
-			continue
 		if args lenght = 0
+	for filename in args
 		usage("need at least one file", wc)
 		else for file in args open file
 			for line in fileObj,
-				 lineList append line
-			lineCount = length of lineList
-			for line in lineList
-				charcount += length of lineList[line]
+				linecount+= 1
+				charcount += length of line
 				wordCount += count(",") +1
 		print lineCount, wordCount, charCount, fileName
 		append values to linecountlist, wordcountlist, charcount list
@@ -281,29 +277,60 @@ def tac(args)
 -If no files given, call usage for too few args
 -for file in args open file
 -append fileObj into list
--for obj in list, index = 0, 
+-for obj in list, print first line with comma instead of a newline
+-for fileObj in list, close file
+
+**Ouput:
+-line i of each file printed together on same line
+
+**Function Stub:
+def paste(args)
+	if args length = 0, call usage(too few arguments)
+	else
+		for file in args open file
+		append open file to listOfFIles
+		numberOfFiles = len(listOfFiles)
+		currentFile = 0
+		for fileObj in listOfFIles
+			currentFile += 1
+			if currentFile = numberOfFiles
+				print line i of file + "\n"
+			else
+				print line i of file + ","
+			Is there a way to print a specific line from a file?
+			 
 #cut
 # 2.  Functional Examples
-
-**Design a process for obtaining the output from the input.  Consider both *good*
-and *bad* inputs.  Find or create examples of both kinds of input.**
-
-**Work out problem examples on paper, on a whiteboard or some other medium that
-is *not* your computer.  It is a mistake to begin writing executable code
-before you thoroughly understand what form the algorithm(s) must take.**
-
-**Instead, describe components of the system in *"pseudocode"*.  Expect to make
-lots of mistakes at this point.  You will find that it is much easier to throw
-away pseudocode than real code.**
-
-**Manually work through several examples that illustrate the program's overall
-purpose, as well as the purpose of each component of the finished system.  You
-will converge on a correct solution much faster if you feel comfortable making
-mistakes as you go.**
-
-**This phase involves the use of many levels of abstraction to decompose the
-problem into manageable components, and design strategies for implementing each
-component.  Components may be functions, modules or classes.**
+def head()	
+	If args[0] == -n 
+		if args[1].isnumeric()
+                	numberOfLines = int(args[1])
+                	remove args[0,1]
+		else: 
+			usage(number of lines is required with -n)
+        elif len(args) == 0
+		usage(too few argumentsm, please provide at least one file)
+	else 
+                 numberOfLines = 10
+        if args.len == 1
+        for file in args open file
+		lineCount = 0
+                for line in fileObj 
+			lineCount += 1
+			print(line)
+			if lineCount == numberOfLines
+				break
+                close file
+        elif len(args) > 1
+        for file in args open file
+		print(f"=====>{fileName}<=====", fileName)
+		lineCount = 0
+                for line in fileObj
+                        lineCount += 1
+                        print(line)
+                        if lineCount == numberOfLines
+                                break
+		close(fileObj)
 
 
 # 3.  Function Template

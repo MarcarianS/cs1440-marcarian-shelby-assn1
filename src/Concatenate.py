@@ -1,6 +1,9 @@
 # args = a list of filenames (strings)
+import Usage
 def cat(args):
     """concatenate files and print on the standard output"""
+    if len(args) == 0:
+        Usage.usage("Too few arguments, please provide at least one file.", 'cat')
     for fileName in args:
         #open the file
         fileObj = open(fileName)
