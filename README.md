@@ -12,6 +12,10 @@ them into a list from here (felt silly for not thinking of it myself after I rea
 Python's documentation- verified syntax for the count() function
 learned the "in" operator for grep
 verified syntax for remove()
+learned about the existence of enumerate
+
+StackOverflow- Figured out how to tell if a file is at EOF
+- Learned syntax for enumerate
 ## Overview
 
 A client has sought DuckieCorp's services to process a large quantity of textual data.  Specifically, the data is in the form of a Comma Separated Values (CSV) file which is far too large to load as a spreadsheet in an application such as LibreOffice Calc or Microsoft Excel.
