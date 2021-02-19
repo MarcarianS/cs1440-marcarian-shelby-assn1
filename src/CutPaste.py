@@ -7,42 +7,35 @@ def cut(args):
 def paste(args):
 
     def findLargestFile(listOfFiles):
-        fileLength = 0
+
         maxLength = 0
         for fileObj in listOfFiles:
+            fileLength = 0
             for line in fileObj:
                 fileLength += 1
             if fileLength > maxLength:
                 maxLength = fileLength
         return maxLength
 
-    def atEOF(fileObj):
-        if fileObj.read() is None:
-            return True
-        else:
-            return False
+
     """merge lines of files"""
     if len(args) == 0:
         Usage.usage("Please provide at least one file", "paste")
     else:
         listOfFiles = []
+        numberOfFiles = 0
         for file in args:
+            numberOfFiles += 1
             fileObj = open(file)
             listOfFiles.append(fileObj)
-        # numberOfFiles = len(listOfFiles)
-        for i in range(findLargestFile(listOfFiles) - 1):
-            # currentFile = 0
+        maxFileLength = findLargestFile(listOfFiles)
+        for fileObj in listOfFiles:
+            fileObj.seek(0)
+        for i in range(maxFileLength):
             listToJoin = []
             for fileObj in listOfFiles:
-                # currentFile += 1
-                if atEOF(fileObj):
-                    listToJoin.append("")
-                else:
-                    for position, line in enumerate(fileObj):
-                        if position == i:
-                            listToJoin.append(line)
-            for fileObj in listOfFiles:
-                fileObj.seek(0)
+                listToJoin.append((fileObj.readline()).strip())
+
             print(",".join(listToJoin))
         for fileObj in listOfFiles:
             fileObj.close()
