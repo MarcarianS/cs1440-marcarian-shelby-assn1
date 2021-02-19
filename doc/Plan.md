@@ -284,22 +284,48 @@ def tac(args)
 -line i of each file printed together on same line
 
 **Function Stub:
+def findLargestFile(listOfFiles)
+	fileLength = 0
+	maxLength = 0
+	for fileObj in list of files
+		for line in file
+			fileLength += 1
+		if fileLength > maxLength
+			maxLength = fileLength
+	return maxLength
+
+def atEOF(fileObj): 
+	if fileObj.read() = None:
+		return true
+	else
+		return false
 def paste(args)
 	if args length = 0, call usage(too few arguments)
 	else
 		for file in args open file
 		append open file to listOfFIles
 		numberOfFiles = len(listOfFiles)
-		currentFile = 0
+		for i in range(findLargestFile(listOFFiles)
+			currentFile = 0
 		for fileObj in listOfFIles
+			listToJoin = []
 			currentFile += 1
-			if currentFile = numberOfFiles
-				print line i of file + "\n"
-			else
-				print line i of file + ","
-			Is there a way to print a specific line from a file?
-			 
+			if atEOF(fileObj)
+				ListToJoin.append("")
+			else:
+				for position, line in enumerate(fileObj):
+					if position == currentLine
+					listToJoin.append(line)
+			listToJoin.join(",")
+			print(listToJoin, \n)	
+		for fileObj in listOfFiles
+			fileObj.close()				 
 #cut
+**Input:
+list of files
+
+**Internal data:
+-
 # 2.  Functional Examples
 def head()	
 	If args[0] == -n 
@@ -390,6 +416,30 @@ def tac(args)
                 for line in list, print line
                 close file
 
+def paste(args)
+	if args length = 0
+		usage(too few arguments)
+        else
+		listOfFile = []
+                for file in args
+			fileObj = open(file)
+	                listOfFile.append(fileObj)
+                numberOfFiles = len(listOfFiles)
+                for i in range(findLargestFile(listOFFiles) - 1)
+                        currentFile = 0
+                	for fileObj in listOfFIles
+                        	listToJoin = []
+                        	currentFile += 1
+                        	if atEOF(fileObj)
+                                	ListToJoin.append("")
+                        	else:
+                                	for position, line in enumerate(fileObj):
+                                        	if position == currentLine
+                                        	listToJoin.append(line)
+                        	listToJoin.join(",")
+                        	print(listToJoin, \n)
+                	for fileObj in listOfFiles
+                        	fileObj.close()
 
 # 3.  Function Template
 
