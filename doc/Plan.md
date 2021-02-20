@@ -322,10 +322,50 @@ def paste(args)
 			fileObj.close()				 
 #cut
 **Input:
-list of files
+-list of files
 
 **Internal data:
--
+-check for and remove flag if present
+-open the files one at a time
+-read the lines one at time
+-use .split() to make each line a list of strings
+-print entry 1 (default) of the list
+-if one flag is present, print that entry of the list
+-if multiple flags are present, split them on the comma
+-for length of flagList
+-print line entry corresponding to flag
+
+**Output:
+-specified entry from each line of a file
+
+**Function Stub:
+def cut(args)
+	if len(args) == 0 usage(toofew  arguments)
+	elif args[0] == -f
+		listofflags = []
+		remove -f
+		args[0] = string of flags
+		args[0].remove
+		listof flags = ",".split(stringofflags)
+		for file in args
+			open file
+				for line in fileObj
+					",".split(line) = listofWords
+					listToJoin = []
+					for i in range(len(listofflags))
+						find min of flags
+						remove min of flags
+						if len(list of words) < minOfFlag - 1
+							listtojoin.append("")
+						else
+							listtoJoin.append(listOfWords[minOfFlag - 1]
+					join listtoJoin and print
+	else
+		for file in args open file
+			for line in fileObj
+				split on the comma into list of words
+				print(listofwords[0]
+	
 # 2.  Functional Examples
 def head()	
 	If args[0] == -n 
@@ -440,6 +480,38 @@ def paste(args)
                         	print(listToJoin, \n)
                 	for fileObj in listOfFiles
                         	fileObj.close()
+
+def cut(args)
+	if len(args) == 0 
+		usage(toofew  arguments)
+        elif args[0] == "-f"
+                listofflags = []
+                args.remove(args[0])
+                strOfFlags = args[0]
+                args[0].remove
+                listof flags = ",".split(stringofflags)
+                for file in args
+                        open file
+                                for line in fileObj
+                                        ",".split(line) = listofWords
+                                        listToJoin = []
+					numberOfFlags = len(listOfFlags)
+                                        for i in range(numberOfFlags - 1)
+                                                min(listOfFlags)
+                                                listOFFlags.remove(min)
+                                                if len(list of words) < minOfFlag - 1
+                                                        listtojoin.append("")
+                                                else
+                                                        listtoJoin.append(listOfWords[minOfFlag - 1]
+                                        joinedList = ",".join(listToJoin)
+					print(joinedList)
+			close file
+        else
+                for file in args open file
+                        for line in fileObj
+                                split on the comma into list of words
+                                print(listofwords[0]
+		closeFile
 
 # 3.  Function Template
 
