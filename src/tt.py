@@ -37,6 +37,6 @@ else:
     elif sys.argv[0] == "paste":
         sys.argv.remove(sys.argv[0])
         CutPaste.paste(sys.argv)
-
-    #print("TODO: determine which tool the user has invoked")
-    #print("TODO: call on that tool, forwarding any remaining arguments to it")
+    elif sys.argv[0] == "cut":
+        sys.argv.remove(sys.argv[0])
+        CutPaste.cut(sys.argv)

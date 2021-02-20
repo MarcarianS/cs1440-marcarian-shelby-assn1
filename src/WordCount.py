@@ -1,4 +1,5 @@
 import Usage
+
 def wc(files):
     lineCountList = []
     wordCountList = []

@@ -2,7 +2,9 @@ import Usage
 
 
 def head(args):
+
     """output the first part of files"""
+
     def oneFileHead(args, numberOfLines):
         for file in args:
             lineCount = 0
@@ -61,7 +63,9 @@ def head(args):
 
 
 def tail(args):
+
     """output the last part of files"""
+
     def oneFileTail(args, numberOfLines):
         for file in args:
             fileObj = open(file)

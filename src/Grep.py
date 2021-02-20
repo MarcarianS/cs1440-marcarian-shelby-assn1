@@ -1,6 +1,8 @@
 import Usage
 def grep(args):
+
     """print lines that match patterns"""
+
     if len(args) == 0:
         Usage.usage("Too few arguments, please provide a pattern and a least one file.", 'grep')
     else:
